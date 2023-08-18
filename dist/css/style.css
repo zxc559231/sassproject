@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*宣告變數
+後面要以分號;結尾
+語意化、駝峰寫法
+宣告寫在{}內為區域變數，在之外為全域變數*/
+body {
+  color: #404040;
+  background-color: #fff3bf;
+}
+
+/*可使用巢狀的寫法*/
+nav ul {
+  background-color: rgb(255, 136, 116);
+}
+nav ul li {
+  color: #3b00b3;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.container {
+  font-size: 40px;
+}

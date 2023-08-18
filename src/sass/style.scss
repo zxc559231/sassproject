@@ -1,0 +1,38 @@
+/*宣告變數
+後面要以分號;結尾
+語意化、駝峰寫法
+宣告寫在{}內為區域變數，在之外為全域變數*/
+
+$fontSize: 20px;
+$bgcolor: #fff3bf;
+$list: 10px 20px;
+$map: (
+    key:'value',
+    large:50px,
+    medium:40px,
+    small:20px
+);
+
+
+body {
+    color: #404040;
+    background-color: $bgcolor;
+}
+
+/*可使用巢狀的寫法*/
+nav {
+    ul {
+        background-color: rgb(255, 136, 116);
+
+        li {
+            color: #3b00b3;
+            font-size: $fontSize;
+            padding: $list;
+        }
+    }
+}
+
+
+.container {
+    font-size: map-get($map, medium);
+}
