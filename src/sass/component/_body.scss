@@ -1,0 +1,15 @@
+// @include layout(1000px);
+
+body {
+    color: #404040;
+    background-color: $bgcolor;
+}
+
+.wrapper{
+    @include layout(100%);
+    .container{
+        @include layout(600px);
+        background-color: #ffffff;
+        font-size: map-get($map, medium);
+    }
+}

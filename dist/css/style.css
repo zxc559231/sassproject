@@ -3,21 +3,161 @@
 後面要以分號;結尾
 語意化、駝峰寫法
 宣告寫在{}內為區域變數，在之外為全域變數*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&family=Oswald&display=swap");
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  margin: 20px;
+}
+
+.btn_default {
+  border: 1px solid #d8a076;
+  background-color: #fff;
+  color: #d8a076;
+}
+.btn_default:hover {
+  background-color: #d8a076;
+  color: #fff;
+}
+
+.btn_error {
+  border: 1px solid #9a699d;
+  background-color: #fff;
+  color: #9a699d;
+}
+.btn_error:hover {
+  background-color: #9a699d;
+  color: #fff;
+}
+
+.btn_fail {
+  border: none;
+  background-color: #4e7954;
+  color: #fff;
+}
+.btn_fail:hover {
+  background-color: #263b29;
+}
+
+.btn_radius {
+  border-radius: 10px;
+}
+
+.btn_rounded {
+  border-radius: 30px;
+}
+
 body {
   color: #404040;
   background-color: #fff3bf;
 }
 
-/*可使用巢狀的寫法*/
-nav ul {
+.wrapper {
+  width: 100%;
+}
+.wrapper .container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #ffffff;
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  color: #311f81;
+  display: inline-block;
+}
+
+h1 {
+  padding: 10px;
+  font-weight: bold;
+  font-family: "Noto Serif TC", serif;
+}
+
+header nav ul {
   background-color: rgb(255, 136, 116);
 }
-nav ul li {
-  color: #3b00b3;
+@media screen and (max-width: 1024px) {
+  header nav ul {
+    background-color: rgb(255, 220, 116);
+  }
+}
+@media screen and (max-width: 768px) {
+  header nav ul {
+    background-color: rgb(214, 241, 171);
+  }
+}
+header nav ul li {
+  color: #311f81;
   font-size: 20px;
   padding: 10px 20px;
 }
 
-.container {
-  font-size: 40px;
+footer nav ul {
+  background-color: rgb(64, 112, 223);
+}
+footer nav ul li {
+  color: #2f2f2f;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.radius {
+  border: 1px solid #000000;
+  border-radius: 30px;
+  color: #2a2a2a;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #797ccb;
+}
+
+.box {
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+  width: 300px;
+  background-color: #dfdfdf;
+}
+
+.component {
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: #2f2f2f;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.about {
+  color: #af2b2b;
+}
+
+.test {
+  width: 500px;
+  height: 90px;
+  margin: 100px;
+  font: 3.3333333333px;
+}
+
+.test {
+  color: #000;
+}
+
+.test {
+  color: #000;
+}
+
+.test {
+  color: red;
 }

@@ -1,0 +1,117 @@
+@mixin center($w, $h:null){    //宣告   //有可能不需給值的變數加null
+    margin: 20px auto;
+    text-align: center;  
+    padding: 10px;      
+    width: $w;
+    height: $h;
+}
+//_index.scss
+// .box{
+//     @include center(300px);  //呼叫
+//     background-color: #dfdfdf;
+// }
+// .component{
+//     @include center(100% ,40px);
+//     background-color: #2f2f2f;
+//     box-sizing: border-box;
+//     color: #ffffff;
+// }
+
+
+//便數值給變數=正方形
+@mixin rect($w, $h:$w){
+    width: $w;
+    height: $h;
+}
+//_index.scss
+// .square{
+// @include rect(100px);
+// background-color: #797ccb;
+// }
+
+
+//RWD使用最外層框架
+@mixin layout($w){  
+    @if $w == 100% {
+        width: 100%;
+    } @else {
+        max-width: $w;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+//_body.scss
+// .wrapper{
+//     @include layout(100%);
+//     .container{
+//         @include layout(600px);
+//         background-color: #ffffff;
+//         font-size: map-get($map, medium);
+//     }
+// }
+
+
+//手機板    //斷點數值去_var.scss修改
+@mixin m(){
+    @media screen and (max-width:$m) {
+        @content;        
+    }
+}
+//平板
+@mixin t(){
+    @media screen and (max-width:$t) {
+        @content;
+    }
+}
+//_header.scss
+// header nav {
+//     ul {
+//         background-color: rgb(255, 136, 116);
+//         @include t(){
+//             background-color: rgb(255, 220, 116);
+//         }
+//         @include m(){
+//             background-color: rgb(214, 241, 171);
+//         }
+//     }
+// }
+
+
+@mixin  fontWeight($o){
+    @if $o == bold{
+        font-weight: bold;
+    } @else if $o == default{
+        font-weight: 400;
+    } @else{
+        font-weight: 100;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&family=Oswald&display=swap');
+@mixin fontStyle($s){
+    @if $s == "zh"{
+        font-family: 'Noto Serif TC', serif;
+    } @else if $s == "en"{
+        font-family: 'Oswald', sans-serif;
+    }
+}
+//_title.scss
+// h1{
+//     @include fontWeight(bold);
+//     @include fontStyle(zh)
+// }
+
+
+@mixin border($c, $b:true){
+    @if border{
+        border: 1px solid $c;
+        border-radius: 30px;
+        color: #2a2a2a;
+    } @else{
+        border: initial;
+    }
+}
+//_index.scss
+// .btn{
+//     @include border(#000000)
+// }
+    

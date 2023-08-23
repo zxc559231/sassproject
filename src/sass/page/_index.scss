@@ -1,0 +1,20 @@
+.radius{
+    @include border(#000000)
+}
+
+.square{
+    @include rect(100px);
+    background-color: #797ccb;
+}
+
+.box{
+    @include center(300px);  //呼叫
+    background-color: #dfdfdf;
+}
+    
+.component{
+    @include center(100% ,40px);
+    background-color: #2f2f2f;
+    box-sizing: border-box;
+    color: #ffffff;
+}

@@ -1,0 +1,18 @@
+
+header nav {
+    ul {
+        background-color: rgb(255, 136, 116);
+        @include t(){
+            background-color: rgb(255, 220, 116);
+        }
+        @include m(){
+            background-color: rgb(214, 241, 171);
+        }
+        li {
+            color: #311f81;
+            font-size: $fontSize;
+            padding: $list;
+        }
+    }
+}
+

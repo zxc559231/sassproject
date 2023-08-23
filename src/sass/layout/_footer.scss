@@ -1,0 +1,11 @@
+footer nav {
+    ul {
+        background-color: rgb(64, 112, 223);
+
+        li {
+            color: #2f2f2f;
+            font-size: $fontSize;
+            padding: $list;
+        }
+    }
+}

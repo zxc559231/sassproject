@@ -1,0 +1,49 @@
+//基本結構
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+}
+
+//效果
+@mixin btnColor($bgc , $border: false) {
+    @if $border {
+      border: 1px solid $bgc;
+      background-color: #fff;
+      color: $bgc;
+      &:hover {
+        background-color: $bgc;
+        color: #fff
+      }
+    } @else {
+    border: none;
+      background-color: $bgc;
+      color: #fff;
+      &:hover {
+        background-color: darken($bgc, 20);
+      }
+    }
+  }
+
+//Color
+.btn_default {
+    @include btnColor(#d8a076 , true);
+}
+.btn_error {
+    @include btnColor(#9a699d, true);
+}
+.btn_fail {
+    @include btnColor(#4e7954);
+}
+
+//圓角
+.btn_radius {
+    border-radius: 10px;
+}
+.btn_rounded {
+    border-radius: 30px;
+}
+  

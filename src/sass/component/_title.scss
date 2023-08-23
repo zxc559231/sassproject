@@ -1,0 +1,13 @@
+a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #311f81;
+    display: inline-block;
+}
+
+h1{
+    padding: 10px;
+    @include fontWeight(bold);
+    @include fontStyle(zh)
+}

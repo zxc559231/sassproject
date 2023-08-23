@@ -59,10 +59,13 @@ const sass = require('gulp-sass')(require('sass'));
 
 function styleSass() {
     return src('./src/sass/*.scss')
-        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sass.sync().on('error', sass.logError))   //將scss打包成css時會分行
+        // .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError)) //將scss打包成css時會變成一行
         .pipe(dest('./dist/css'));
 }
 exports.style = styleSass
+
+
 
 
 

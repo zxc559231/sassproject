@@ -3,36 +3,63 @@
 語意化、駝峰寫法
 宣告寫在{}內為區域變數，在之外為全域變數*/
 
-$fontSize: 20px;
-$bgcolor: #fff3bf;
-$list: 10px 20px;
-$map: (
-    key:'value',
-    large:50px,
-    medium:40px,
-    small:20px
-);
+//拆結構用
+//共用變數  //順序不要調換 由小到大
+@import "base/color";
+@import "base/font";
+@import "base/var";
+// function
+@import "mixin/mixin";
+//component
+@import "component/btn";
+@import "component/card";
+@import "component/form";
+@import "component/body";
+@import "component/title";
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/login";
+// page
+@import "page/index";
+@import "page/about";
+@import "page/product";
 
-
-body {
-    color: #404040;
-    background-color: $bgcolor;
+//運算式
+.test{
+    width: 100px + 400px;   //其一有單位即可前後無所謂，都無則結果無單位
+    height: 100px - 10px;
+    margin: 10*10 + px;
+    font: (100 / 30) + px; //會報錯但可有結果
 }
 
-/*可使用巢狀的寫法*/
-nav {
-    ul {
-        background-color: rgb(255, 136, 116);
-
-        li {
-            color: #3b00b3;
-            font-size: $fontSize;
-            padding: $list;
-        }
+//判斷式
+$color:true;
+@if $color {
+    .test{
+        color: #000;
+    }
+}@else if $color{
+    .test{
+        color: #a4a4a4;
+    }
+}
+//上下相等，寫法不同
+.test{
+    @if $color {
+            color: #000;
+    }@else if $color{
+            color: #a4a4a4;
     }
 }
 
-
-.container {
-    font-size: map-get($map, medium);
+$color : red;
+@if $color == black{
+    .test{
+        color: black;
+    }
+} @else if $color == red{
+    .test{
+        color: red;
+    }
 }
