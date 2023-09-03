@@ -16,6 +16,8 @@
 @import "component/form";
 @import "component/body";
 @import "component/title";
+@import "component/spacing";
+@import "component/grid";
 // layout
 @import "layout/header";
 @import "layout/footer";
@@ -62,4 +64,62 @@ $color : red;
     .test{
         color: red;
     }
+}
+
+
+
+.col1{
+    background-color: #b0d8ff;
+}
+.col2{
+    background-color: #6b86a0;
+}
+
+// each
+$class : a1 a2 b1 banner1 banner2 banner3 banner4 sloder1;
+@mixin img($class){
+    @each $img in $class{
+        .img_#{$img}{
+            background-image:url('images/#{$img}.jpg');
+            background-repeat: no-repeat;
+        }
+    }
+}
+@include img(banner3 banner4 sloder1);
+
+// 字體大小定義
+$fontsizes:(
+ 'h1':50px,
+ 'h2':40px,   
+ 'h3':30px,
+ 'span':16px,
+ 'div':18px,
+'.title_h2':38px
+);
+    @each $k, $v in $fontsizes{
+    #{$k}{
+        font-size: $v;
+    }
+}
+// 倍數向上
+@for $i from 1 through 10 {
+    .border-radius-#{$i} {
+        border-radius: $i * 4px ;
+    }
+}
+
+$color:(
+    'primary': #fcbc68,
+    'secondary': #e3d56c,
+    'success': #7aae85,
+    'warning': #65819f,
+    'error': #ff0000,
+);
+@each $k, $v in $color{
+    .#{$k}_bg{
+        background-color: $v;
+    }
+    .#{$k}_color{
+        background-color: $v;
+    } 
 }

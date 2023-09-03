@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --gap: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding-left: var(--gap);
+    padding-right: var(--gap);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--gap) * -1);
+    margin-right: calc(var(--gap) * -1);
+}
+
+[class*="col-"],
+[class*="row-cols-"]>.col {
+    padding: 0 var(--gap);
+    box-sizing: border-box;
+}
+
+
+// 寫法 (1)
+// 使用max-width 由大到小
+@for $i from 1 through 12 {
+    //桌機
+    .col-#{$i}{
+        width: ($i / 12) * 100%; //運算式
+    }
+    //1200px
+    @include xl(){
+        .col-xl-#{$i}{
+            width: ($i / 12) * 100%;
+        }
+    }
+    //平板   //1024px
+    @include t(){
+        .col-md-#{$i}{
+            width: ($i / 12) * 100%;
+        }
+    }
+    //手機   //768px
+    @include m(){
+        .col-sd-#{$i}{
+            width: ($i / 12) * 100%;
+        }
+    }
+} 

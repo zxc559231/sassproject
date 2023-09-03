@@ -63,6 +63,11 @@
         @content;
     }
 }
+@mixin xl(){
+    @media screen and (max-width:$xl) {
+        @content;
+    }
+}
 //_header.scss
 // header nav {
 //     ul {
@@ -114,4 +119,77 @@
 // .btn{
 //     @include border(#000000)
 // }
-    
+
+
+
+//變數只能放在屬性值內
+//變數轉型：url路徑 /class名稱 /屬性名稱 都須使用字串轉變數 >>> #{變數}
+// space
+@for $i from 1 through 10 {
+    $attr:padding;
+    $link:aa;
+    .top_#{$i}{
+        margin-top: $i + px;
+        #{$attr}:10px;
+        background-color: url(./images/#{$link}.jpg);
+    }
+// .top_#{$i}{
+//     margin-top : $i + px;
+// }
+.bottom_#{$i}{ //$i是吃for迴圈內的值
+    margin-bottom : $i + px;
+}
+.left_#{$i}{
+    margin-left : $i + px;
+}
+.right_#{$i}{
+    margin-right : $i + px;
+}    
+} 
+
+
+
+
+
+// @include spacing(100)
+
+// @mixin spacing($val , $position:true) {
+//     @for $i from 1 through $val {
+//       .top_#{$i} {
+//         @if $position {
+//              position: relative;
+//              top : $i + px
+//         }@else {
+//            margin-top: $i + px;
+//         }
+//       }
+//       .bottom_#{$i} {
+//        @if $position {
+//              position: relative;
+//              bottom : $i + px
+//         }@else {
+//            margin-bottom: $i + px;
+//         }
+//       }
+//       .left_#{$i} {
+//         @if $position {
+//              position: relative;
+//              left : $i + px
+//         }@else {
+//            margin-left: $i + px;
+//         }
+//       }
+//       .right_#{$i} {
+//         @if $position {
+//              position: relative;
+//              right : $i + px
+//         }@else {
+//            margin-right: $i + px;
+//         }
+//       }
+//     }
+//   }
+// if true => position  false => margin
+// @include spacing(100 , true)
+
+

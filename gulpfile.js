@@ -76,3 +76,5 @@ function watchTask() {
     watch(['./src/sass/*.scss', './src/sass/**/*.scss'], styleSass)
 }
 exports.w = watchTask
+
+// watch(['./src/*.html', './scr/layout/*.html'], includeHTML)('ch') //沒寫完
